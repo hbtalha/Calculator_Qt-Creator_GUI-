@@ -172,11 +172,13 @@ void MainWindow::operatorClicked(QAbstractButton* button)
         oper = button->text();
 
         calculate(str.toDouble(), oper);
-
     }
 
-    pending_oper = true;
-    after_oper = false;
+    if( ! lineEdit_empty() )
+    {
+        pending_oper = true;
+        after_oper = false;
+    }
 
     text_up_an_operator = ui->lineEdit_2->text();
 }
