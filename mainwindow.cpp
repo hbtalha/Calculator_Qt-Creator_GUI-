@@ -267,9 +267,9 @@ void MainWindow::on_equals_clicked()
 
     QString str = ui->lineEdit->text();
 
-    if(((str == "0" && pending_oper) || (str == "0" && after_oper)) && oper == ui->divide->text() )
+    if(((str == "0" && pending_oper) || (str == "0" && after_oper)) && oper == ui->divide->text() && ! unary_op )
     {
-        pending_oper = after_oper = false;
+        pending_oper = after_oper = unary_op = false;
 
         cantDivideByZero();
         return;
