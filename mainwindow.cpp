@@ -502,6 +502,9 @@ void MainWindow::on_backspsce_clicked()
         return;
     }
 
+    if(equal_done)
+        clearAll();
+
     if(! lineEdit_empty() && ! equal_done && ! pending_oper)
     {
         QString str = ui->lineEdit->text();
